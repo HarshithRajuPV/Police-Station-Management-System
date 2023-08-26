@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: consolas;
+    }
+    body{
+       
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(120deg,#c5e0ec,#596f80);
+    }
+    .container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+    .container .box{
+        position: relative;
+        width: 400px;
+        height: 480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .box::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 100%;
+        background: linear-gradient(#fff,#fff,#e3e3e3);
+        filter: blur(1px);
+        z-index: 1;
+    }
+    .container .box::after{
+        content: '';
+        position: absolute;
+        top: 1;
+        right: -1px;
+        width: 25px;
+        height: 100%;
+        background: #9d9d9d;
+        filter: blur(1px);
+        z-index: 1;
+    }
+    .container .box .shadow{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #eee;
+    } 
+
+
+    .cover{
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100px;
+        height: 100px;
+        background: rgba(181, 210, 221, 0);
+        z-index: 1;
+    }
+    .content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#dbdae1,#a3aaba);
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+        15px 15px 15px rgba(0,0,0,0.1), 
+        20px 10px 20px rgba(0,0,0,0.1),
+        50px 50px 80px rgba(0,0,0,0.25),
+        inset 3px 3px 2px #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content .form
+    {
+        position: relative;
+        width: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .content .form h2{
+        font-size: 2em;
+        color: #444;
+        margin-bottom: 20px;
+    }
+    .content .form .inputbox{
+        position: relative;
+        width: 100%;
+        
+        margin-top: 10px;
+    }
+    .content .form .inputbox input{
+        position: relative;
+        width: 100%;
+        padding: 10px 0 10px 25px; 
+        font-size: 1.25em;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        border-bottom: 3px solid #444;
+        outline: none;
+        color: #444;
+    }
+    .content .form .inputbox span{
+        position: absolute;
+        left: 0;
+        padding: 10px 0 10px 0;
+        font-size: 1.25em;
+        pointer-events: none;
+        color: #444;
+        transition: 0.5s;
+    }
+    .content .form .inputbox input:focus ~ span,
+    .content .form .inputbox input:valid ~ span
+    {
+        transform: translateY(-20px);
+        font-size: 0.9em;
+        background: #444;
+        color: #fff;
+        padding: 2px 4px;
+    }
+
+    .content .form .inputbox input[type="submit"]{
+        background: #444;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .content .form .inputbox input[type="submit"]:hover{
+        background: #333;
+    }
+    .headtop{
+    text-align: center;
+font-size: 35px;
+background-color: rgb(19, 80, 172);
+padding: 20px;
+color: white;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+    
+</style>
+<script>
+    function auth()
+    {
+
+        var username= document.getElementById("user").value;
+        var passkey= document.getElementById("pass").value;
+        if(username == "admin@gmail.com" && passkey == "admin123")
+        {
+            window.location.assign("adminhomepage.html");
+            alert("Login successful");
+        }
+        else{
+
+            alert("Wrong username or password");
+        }
+
+    }
+</script>
+<body>
+    <h1 class="headtop">Police Database Management System</h1>
+    <div class="container">
+        <div class="box">
+            <div class="cover"></div>
+            <div class="shadow"></div>
+            <div class="content">
+                <div class="form">
+                    <h3 class="logo"></h3>
+                    <h2>Admin Login</h2>
+                    <div class="inputbox">
+                        <input type="text" id="user" required>
+                        <span >Username</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="pass"  required>
+                        <span >Password</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="submit" value="Login" onclick="auth()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

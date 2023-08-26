@@ -1,0 +1,102 @@
+<center>
+
+<div class="uphead">
+  <h3 class="had">Prisoner Database</h3>
+  <button class="back"><a href="userhomepage.html" class="ha">Home</a></button>   
+  </div>
+        <table class="content-member">
+          <thead>
+            <tr class="name-row">
+              <th>Prisoner ID</th>
+              <th>Prison ID</th>
+              <th>Prisoner Name</th>
+              <th>In Date</th>
+              <th>Out Date</th>
+              <th>Crime</th>
+              <th>Arrest Id</th>
+              
+
+
+            </tr>
+          </thead>
+          <tbody>
+          <?php 
+                require 'connection\connection.php';
+                $query = $conn->query("SELECT * FROM `prisoner`");
+                while($row = $query->fetch_array()) 
+                {
+                    ?>
+                    <tr>
+                        <td classs="edit"> <?php echo $row['prisoner_id'];?></td>
+                        <td classs="edit"> <?php echo $row['prison_id'];?> </td>
+                        <td classs="edit"> <?php echo $row['prisoner_name'];?></td>
+                        <td classs="edit"> <?php echo $row['in_date'];?> </td>
+                        <td classs="edit"> <?php echo $row['out_date'];?></td>
+                        <td classs="edit"> <?php echo $row['crime'];?></td>
+                        <td classs="edit"> <?php echo $row['arrest_pid'];?>
+                      </td><?php $prisonerid = $row['prisoner_id']; ?>
+                    
+                  
+                   <?php
+                }
+            ?>
+            </tbody>
+            </table>
+     
+            <body>
+
+              </center>
+</body>
+<style>
+      *{
+        margin:0;
+        padding:0;
+    }
+    td,tr{
+    border-bottom: 1px solid black;
+    /* border-radius: 4px; */
+    background-color: white;
+    color:black;
+    justify-content: center;
+    text-align: center ;
+    padding: 1% 2%;
+    width: 80px;;
+}
+th{
+      background-color: rgba(2, 8, 81, 0.804);
+      color: white;
+      padding: 10px;
+      padding-left:30px;
+      padding-right:40px;
+}
+h3{
+  text-align:center;
+}
+.a{
+  text-decoration:none;
+  padding:10px;
+}
+.btn{
+  display: flex;
+  margin-top:40px;
+}
+.uphead{
+    background:rgb(19, 80, 172);
+    padding:30px;
+  }
+  .had{
+    color:white;
+    font-family:verdana;
+    font-size: 30px;
+  }
+  .back{
+    position: relative;
+    left: 742px;
+    top: 16px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .ha{
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+  
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background-color: rgb(246, 249, 252);
+    font-family: "Poppins", sana-serif;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.grid{
+    position: absolute;
+    left: 200px;
+    top: 33%;
+    display: grid;
+    width: 114em;
+    grid-gap: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    align-items: start;
+    margin-top: 60px;
+}
+.grid-item{
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+   
+}
+.grid-item:hover{
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+.card-img{
+    display: block;
+    width: 70%;
+    height: 20rem;
+    padding-left: 40px;
+    /* object-fit: cover; */
+}
+.card-content{
+    padding: 3rem;
+}
+.card-header{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1.5rem;
+}
+.card-text{
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
+    color: #3d3d3d;
+    margin-bottom: 2.5rem;
+
+}
+.card-btn{
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    background-color: rgb(19, 80, 172);
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+.card-btn span{
+    margin-left: 1rem;
+    transition: 0.2s;
+    
+}
+.card-btn:hover,.card-btn:active{
+    background-color: #c2cffc;
+
+
+}
+.card-btn:hover span,.card-btn:active span{
+    margin-left: 1.5rem;
+}
+.headtop{
+    margin-top: 0;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.list{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    align-items:center ;
+    justify-content: center;
+    
+}
+.inlist{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid black;
+    font-size: 25px;
+    border-radius: 80px;
+    margin: 20px;
+    background: white;
+}
+.inlist:hover{
+    background: rgb(249, 249, 255);
+    
+}
+.divhead{
+    background:rgb(19, 80, 172);
+    color: whitesmoke;
+
+}
+.image{
+    
+    display: inline;
+    width: 90px;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+}
+.para{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.a,.b{
+    text-decoration: none;
+    color: rgb(250, 250, 255);
+}
+.foots{
+    background:rgb(19, 80, 172);
+    padding: 30px;
+    position: relative;
+    top: 930px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+.foot1{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.h33{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(19, 80, 172);
+}
+.b:hover{
+    color:rgb(19, 80, 172);
+    font-weight: bold;
+}
+.logbtn{
+   
+    border-radius: 10px;
+    margin-bottom: 10px;
+    float: right;
+
+}
+.loga{
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(50, 50, 210);
+    text-decoration: none;
+  
+}
+
+
+</style>
+
+<body>
+    <div class="divhead">
+        <button class="logbtn"><a href="startpage.html" class="loga">Logout</a></button>
+        <center><img src="images.jpg" alt="" class="image">
+            <h1 class="headtop">Police Database Management System</h1></center>
+         
+            
+    </div>
+    <div class="logdiv">
+       
+       </div>
+    <h3 class="h33">Hey, Admin</h3>
+
+    <div class="grid">
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="police.jpg" alt="">
+                <div class="card-content">
+                    <h1 class="card-header"> Police</h1>
+                    <p class="card-text">Click here to check the details</p>
+                    <button class="card-btn"><a href="police.php" class="b"> Police  </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="prisoner.png" alt="">
+                <div class="card-content">
+                    <h1 class="card-header">Prisoners</h1>
+                    <p class="card-text">Click here to check the details</p>
+                    <button class="card-btn"><a href="prison.php" class="b"> Prisoners </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="department.jpg" alt="">
+                <div class="card-content">
+                    <h1 class="card-header">Departments</h1>
+                    <p class="card-text">Click here to check the details</p>
+                    <button class="card-btn"><a href="department.php" class="b"> Departments </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="station.jpg" alt="">
+                <div class="card-content">
+                    <h1 class="card-header"> Stations</h1>
+                    <p class="card-text">Click here to check the details</p>
+                    <button class="card-btn"><a href="station.php" class="b"> Stations </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="vehicle.jpg" alt="">
+                <div class="card-content">
+                    <h1 class="card-header">Vehicles</h1>
+                    <p class="card-text">Click here to check the details</p>
+                    <button class="card-btn"><a href="vehicle.php" class="b"> Vehicles </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-img" src="aboutus.jpg" alt="">
+                <div class="card-content">
+                    <h1 class="card-header">About Us</h1>
+                    <p class="card-text">Click here to kmow more about us</p>
+                    <button class="card-btn"><a href="aboutusadmin.html" class="b"> About us </a><span>&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    
+</div>
+<div class="foots">Contact Us:
+    <div class="foot1">Mail: police@gmail.com</div>
+    <div class="foot1">Number: 9807854326</div>
+    <div class="foot1">Address: #66, 7th cross, Bangalore-560001</div>
+</div>
+
+
+</body>
+
+</html>
